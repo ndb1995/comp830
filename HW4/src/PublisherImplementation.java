@@ -63,6 +63,7 @@ public class PublisherImplementation implements PublisherInterface{
 			// this will account for 40, 80, 120, 160, and 200 instead of doing a statement for each of them
 			if (x % 40 == 0) {
 				
+				// if subscribers doesn't contain odds or threes we are allowed to register them again
                 if (!subscribers.contains(odds))
                     registerObserver(odds);
                 if (!subscribers.contains(threes))

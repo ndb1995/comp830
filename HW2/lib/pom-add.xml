@@ -1,0 +1,993 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<modelVersion>4.0.0</modelVersion>
+<groupId>org.mockito</groupId>
+<artifactId>mockito-core</artifactId>
+<version>2.22.0</version>
+<dependencies>
+<dependency>
+<groupId>net.bytebuddy</groupId>
+<artifactId>byte-buddy</artifactId>
+<version>1.8.21</version>
+<scope>compile</scope>
+</dependency>
+<dependency>
+<groupId>net.bytebuddy</groupId>
+<artifactId>byte-buddy-agent</artifactId>
+<version>1.8.21</version>
+<scope>compile</scope>
+</dependency>
+<dependency>
+<groupId>org.objenesis</groupId>
+<artifactId>objenesis</artifactId>
+<version>2.6</version>
+<scope>compile</scope>
+</dependency>
+</dependencies>
+<name>mockito-core</name>
+<packaging>jar</packaging>
+<url>https://github.com/mockito/mockito</url>
+<description>Mockito mock objects library core API and implementation</description>
+<licenses>
+<license>
+<name>The MIT License</name>
+<url>https://github.com/mockito/mockito/blob/master/LICENSE</url>
+<distribution>repo</distribution>
+</license>
+</licenses>
+<scm>
+<url>https://github.com/mockito/mockito.git</url>
+</scm>
+<issueManagement>
+<url>https://github.com/mockito/mockito/issues</url>
+<system>GitHub issues</system>
+</issueManagement>
+<ciManagement>
+<url>https://travis-ci.org/mockito/mockito</url>
+<system>TravisCI</system>
+</ciManagement>
+<developers>
+<developer>
+<id>mockitoguy</id>
+<name>Szczepan Faber</name>
+<roles>
+<role>Core developer</role>
+</roles>
+<url>https://github.com/mockitoguy</url>
+</developer>
+<developer>
+<id>bric3</id>
+<name>Brice Dutheil</name>
+<roles>
+<role>Core developer</role>
+</roles>
+<url>https://github.com/bric3</url>
+</developer>
+<developer>
+<id>raphw</id>
+<name>Rafael Winterhalter</name>
+<roles>
+<role>Core developer</role>
+</roles>
+<url>https://github.com/raphw</url>
+</developer>
+<developer>
+<id>TimvdLippe</id>
+<name>Tim van der Lippe</name>
+<roles>
+<role>Core developer</role>
+</roles>
+<url>https://github.com/TimvdLippe</url>
+</developer>
+</developers>
+<contributors>
+<contributor>
+<name>continuous-delivery-drone</name>
+<url>https://github.com/continuous-delivery-drone</url>
+</contributor>
+<contributor>
+<name>shipkit.org automated bot</name>
+<url>https://github.com/shipkit-org</url>
+</contributor>
+<contributor>
+<name>Marcin Zajączkowski</name>
+<url>https://github.com/szpak</url>
+</contributor>
+<contributor>
+<name>Pascal Schumacher</name>
+<url>https://github.com/PascalSchumacher</url>
+</contributor>
+<contributor>
+<name>Igor Czechowski</name>
+<url>https://github.com/iczechowski</url>
+</contributor>
+<contributor>
+<name>Bartosz Bańkowski</name>
+<url>https://github.com/bbankowski</url>
+</contributor>
+<contributor>
+<name>Erhard Pointl</name>
+<url>https://github.com/epeee</url>
+</contributor>
+<contributor>
+<name>Allon Murienik</name>
+<url>https://github.com/mureinik</url>
+</contributor>
+<contributor>
+<name>Christian Schwarz</name>
+<url>https://github.com/ChristianSchwarz</url>
+</contributor>
+<contributor>
+<name>Lukasz Szewc</name>
+<url>https://github.com/lukasz-szewc</url>
+</contributor>
+<contributor>
+<name>Marcin Grzejszczak</name>
+<url>https://github.com/marcingrzejszczak</url>
+</contributor>
+<contributor>
+<name>Marc Philipp</name>
+<url>https://github.com/marcphilipp</url>
+</contributor>
+<contributor>
+<name>Sangwoo Lee</name>
+<url>https://github.com/marchpig</url>
+</contributor>
+<contributor>
+<name>Philip P. Moltmann</name>
+<url>https://github.com/moltmann</url>
+</contributor>
+<contributor>
+<name>Tim Perry</name>
+<url>https://github.com/pimterry</url>
+</contributor>
+<contributor>
+<name>David J. M. Karlsen</name>
+<url>https://github.com/davidkarlsen</url>
+</contributor>
+<contributor>
+<name>Dawud-xx</name>
+<url>https://github.com/Dawud-xx</url>
+</contributor>
+<contributor>
+<name>Lovro Pandžić</name>
+<url>https://github.com/lpandzic</url>
+</contributor>
+<contributor>
+<name>Werner Beroux</name>
+<url>https://github.com/wernight</url>
+</contributor>
+<contributor>
+<name>Tsuyoshi Murakami</name>
+<url>https://github.com/tmurakami</url>
+</contributor>
+<contributor>
+<name>Serge Bishyr</name>
+<url>https://github.com/SeriyBg</url>
+</contributor>
+<contributor>
+<name>Dmitry Timofeev</name>
+<url>https://github.com/dmitry-timofeev</url>
+</contributor>
+<contributor>
+<name>jerzykrlk</name>
+<url>https://github.com/jerzykrlk</url>
+</contributor>
+<contributor>
+<name>alberskib</name>
+<url>https://github.com/alberskib</url>
+</contributor>
+<contributor>
+<name>Joseph Walton</name>
+<url>https://github.com/josephw</url>
+</contributor>
+<contributor>
+<name>Stephan Schroevers</name>
+<url>https://github.com/Stephan202</url>
+</contributor>
+<contributor>
+<name>Michal Kordas</name>
+<url>https://github.com/mkordas</url>
+</contributor>
+<contributor>
+<name>Kamil Szymański</name>
+<url>https://github.com/kamilszymanski</url>
+</contributor>
+<contributor>
+<name>Hynek Mlnařík</name>
+<url>https://github.com/hmlnarik</url>
+</contributor>
+<contributor>
+<name>Hugh Hamill</name>
+<url>https://github.com/hughwphamill</url>
+</contributor>
+<contributor>
+<name>Hans Joachim Desserud</name>
+<url>https://github.com/hansjoachim</url>
+</contributor>
+<contributor>
+<name>Gunnar Wagenknecht</name>
+<url>https://github.com/guw</url>
+</contributor>
+<contributor>
+<name>Dmytro Chyzhykov</name>
+<url>https://github.com/ffbit</url>
+</contributor>
+<contributor>
+<name>r-smirnov</name>
+<url>https://github.com/r-smirnov</url>
+</contributor>
+<contributor>
+<name>ianparkinson</name>
+<url>https://github.com/ianparkinson</url>
+</contributor>
+<contributor>
+<name>dmac100</name>
+<url>https://github.com/dmac100</url>
+</contributor>
+<contributor>
+<name>Vineet Kumar</name>
+<url>https://github.com/vin</url>
+</contributor>
+<contributor>
+<name>Urs Metz</name>
+<url>https://github.com/UrsMetz</url>
+</contributor>
+<contributor>
+<name>Tarnowski Jan</name>
+<url>https://github.com/tarnowskijan</url>
+</contributor>
+<contributor>
+<name>Roman Elizarov</name>
+<url>https://github.com/elizarov</url>
+</contributor>
+<contributor>
+<name>Roland Hauser</name>
+<url>https://github.com/SourcePond</url>
+</contributor>
+<contributor>
+<name>Michał Borek</name>
+<url>https://github.com/michalborek</url>
+</contributor>
+<contributor>
+<name>Michael Pinnegar</name>
+<url>https://github.com/Jazzepi</url>
+</contributor>
+<contributor>
+<name>Marius Volkhart</name>
+<url>https://github.com/MariusVolkhart</url>
+</contributor>
+<contributor>
+<name>Lucas Cavalcanti</name>
+<url>https://github.com/lucascs</url>
+</contributor>
+<contributor>
+<name>Leonardo Carrasco</name>
+<url>https://github.com/thesnowgoose</url>
+</contributor>
+<contributor>
+<name>Krzysztof Wolny</name>
+<url>https://github.com/vanta</url>
+</contributor>
+<contributor>
+<name>Jeffrey Falgout</name>
+<url>https://github.com/JeffreyFalgout</url>
+</contributor>
+<contributor>
+<name>Emory Merryman</name>
+<url>https://github.com/AFnRFCb7</url>
+</contributor>
+<contributor>
+<name>Clark Brewer</name>
+<url>https://github.com/brewerc</url>
+</contributor>
+<contributor>
+<name>Carlos Aguayo</name>
+<url>https://github.com/carlosaguayo</url>
+</contributor>
+<contributor>
+<name>Arend v. Reinersdorff</name>
+<url>https://github.com/arend-von-reinersdorff</url>
+</contributor>
+<contributor>
+<name>Alberto Scotto</name>
+<url>https://github.com/alb-i986</url>
+</contributor>
+<contributor>
+<name>yyvess</name>
+<url>https://github.com/yyvess</url>
+</contributor>
+<contributor>
+<name>訾明华</name>
+<url>https://github.com/ziminghua</url>
+</contributor>
+<contributor>
+<name>wuwen</name>
+<url>https://github.com/wuwen5</url>
+</contributor>
+<contributor>
+<name>test111</name>
+<url>https://github.com/tradingreason</url>
+</contributor>
+<contributor>
+<name>Xin Liu</name>
+<url>https://github.com/L-KID</url>
+</contributor>
+<contributor>
+<name>Wojtek Wilk</name>
+<url>https://github.com/wwilk</url>
+</contributor>
+<contributor>
+<name>Vladislav</name>
+<url>https://github.com/VChirp</url>
+</contributor>
+<contributor>
+<name>Vivian Pennel</name>
+<url>https://github.com/Vp3n</url>
+</contributor>
+<contributor>
+<name>Venkata Jaswanth</name>
+<url>https://github.com/aj-jaswanth</url>
+</contributor>
+<contributor>
+<name>Tom Ball</name>
+<url>https://github.com/tomball</url>
+</contributor>
+<contributor>
+<name>Tokuhiro Matsuno</name>
+<url>https://github.com/tokuhirom</url>
+</contributor>
+<contributor>
+<name>Tim Cooke</name>
+<url>https://github.com/trcooke</url>
+</contributor>
+<contributor>
+<name>Stuart Blair</name>
+<url>https://github.com/stuartblair</url>
+</contributor>
+<contributor>
+<name>Simen Bekkhus</name>
+<url>https://github.com/SimenB</url>
+</contributor>
+<contributor>
+<name>Scott Markwell</name>
+<url>https://github.com/smarkwell</url>
+</contributor>
+<contributor>
+<name>Sanne Grinovero</name>
+<url>https://github.com/Sanne</url>
+</contributor>
+<contributor>
+<name>Roi Atalla</name>
+<url>https://github.com/ra4king</url>
+</contributor>
+<contributor>
+<name>Robert Stupp</name>
+<url>https://github.com/snazy</url>
+</contributor>
+<contributor>
+<name>Radim Kubacki</name>
+<url>https://github.com/radimk</url>
+</contributor>
+<contributor>
+<name>Philipp Jardas</name>
+<url>https://github.com/phjardas</url>
+</contributor>
+<contributor>
+<name>Oliver Gierke</name>
+<url>https://github.com/olivergierke</url>
+</contributor>
+<contributor>
+<name>Niklas Baudy</name>
+<url>https://github.com/vanniktech</url>
+</contributor>
+<contributor>
+<name>Myrle Krantz</name>
+<url>https://github.com/myrle-krantz</url>
+</contributor>
+<contributor>
+<name>Matt Dean</name>
+<url>https://github.com/mattbdean</url>
+</contributor>
+<contributor>
+<name>Markus Wüstenberg</name>
+<url>https://github.com/markuswustenberg</url>
+</contributor>
+<contributor>
+<name>Maciej Kuster</name>
+<url>https://github.com/NagRock</url>
+</contributor>
+<contributor>
+<name>MEDDAH Julien</name>
+<url>https://github.com/MeddahJ</url>
+</contributor>
+<contributor>
+<name>Ludovic Meurillon</name>
+<url>https://github.com/LudoMeurillon</url>
+</contributor>
+<contributor>
+<name>Ludovic Chane</name>
+<url>https://github.com/ludochane</url>
+</contributor>
+<contributor>
+<name>Krisztian Milesz</name>
+<url>https://github.com/mileszk</url>
+</contributor>
+<contributor>
+<name>Kengo TODA</name>
+<url>https://github.com/KengoTODA</url>
+</contributor>
+<contributor>
+<name>Kayvan Najafzadeh</name>
+<url>https://github.com/kayvannj</url>
+</contributor>
+<contributor>
+<name>José Paumard</name>
+<url>https://github.com/JosePaumard</url>
+</contributor>
+<contributor>
+<name>Jonathan Lloyd</name>
+<url>https://github.com/lloydjm77</url>
+</contributor>
+<contributor>
+<name>Johnny Lim</name>
+<url>https://github.com/izeye</url>
+</contributor>
+<contributor>
+<name>Jesse Englert</name>
+<url>https://github.com/jpenglert</url>
+</contributor>
+<contributor>
+<name>Jeremy Rickard</name>
+<url>https://github.com/jrrickard</url>
+</contributor>
+<contributor>
+<name>Ivan Vershinin</name>
+<url>https://github.com/vershinin</url>
+</contributor>
+<contributor>
+<name>Igor Kostenko</name>
+<url>https://github.com/isanych</url>
+</contributor>
+<contributor>
+<name>Igor Conrado Alves de Lima</name>
+<url>https://github.com/igorcadelima</url>
+</contributor>
+<contributor>
+<name>Gaëtan Muller</name>
+<url>https://github.com/MGaetan89</url>
+</contributor>
+<contributor>
+<name>Felix Dekker</name>
+<url>https://github.com/FWDekker</url>
+</contributor>
+<contributor>
+<name>Evgeny Astafyev</name>
+<url>https://github.com/astafev</url>
+</contributor>
+<contributor>
+<name>Eugene Ivakhno</name>
+<url>https://github.com/eugene-ivakhno</url>
+</contributor>
+<contributor>
+<name>Erik Bakker</name>
+<url>https://github.com/eamelink</url>
+</contributor>
+<contributor>
+<name>Dmitriy Zaitsev</name>
+<url>https://github.com/DmitriyZaitsev</url>
+</contributor>
+<contributor>
+<name>Divyansh Gupta</name>
+<url>https://github.com/divyansh-gupta</url>
+</contributor>
+<contributor>
+<name>Dennis Cheung</name>
+<url>https://github.com/hkdennis2k</url>
+</contributor>
+<contributor>
+<name>David Xia</name>
+<url>https://github.com/davidxia</url>
+</contributor>
+<contributor>
+<name>David Gageot</name>
+<url>https://github.com/dgageot</url>
+</contributor>
+<contributor>
+<name>Christian Persson</name>
+<url>https://github.com/Saser</url>
+</contributor>
+<contributor>
+<name>Bruno Krebs</name>
+<url>https://github.com/brunokrebs</url>
+</contributor>
+<contributor>
+<name>Ben Yu</name>
+<url>https://github.com/fluentfuture</url>
+</contributor>
+<contributor>
+<name>Bartosz Miller</name>
+<url>https://github.com/BartoszMiller</url>
+</contributor>
+<contributor>
+<name>Ariel Isaac</name>
+<url>https://github.com/Ariel-Isaacm</url>
+</contributor>
+<contributor>
+<name>Anuraag Agrawal</name>
+<url>https://github.com/anuraaga</url>
+</contributor>
+<contributor>
+<name>André Gonçalves</name>
+<url>https://github.com/andrerigon</url>
+</contributor>
+<contributor>
+<name>Andrey</name>
+<url>https://github.com/andreyrmg</url>
+</contributor>
+<contributor>
+<name>Andrei Solntsev</name>
+<url>https://github.com/asolntsev</url>
+</contributor>
+<contributor>
+<name>Allan Wang</name>
+<url>https://github.com/AllanWang</url>
+</contributor>
+<contributor>
+<name>Alex Simkin</name>
+<url>https://github.com/SimY4</url>
+</contributor>
+<contributor>
+<name>rberghegger</name>
+<url>https://github.com/rberghegger</url>
+</contributor>
+<contributor>
+<name>philipa</name>
+<url>https://github.com/philipa</url>
+</contributor>
+<contributor>
+<name>paulduffin</name>
+<url>https://github.com/paulduffin</url>
+</contributor>
+<contributor>
+<name>mgrafl</name>
+<url>https://github.com/mgrafl</url>
+</contributor>
+<contributor>
+<name>geoffschoeman</name>
+<url>https://github.com/geoffschoeman</url>
+</contributor>
+<contributor>
+<name>bruceeddy</name>
+<url>https://github.com/bruceeddy</url>
+</contributor>
+<contributor>
+<name>ashleyfrieze</name>
+<url>https://github.com/ashleyfrieze</url>
+</contributor>
+<contributor>
+<name>Nirvanall</name>
+<url>https://github.com/Nirvanall</url>
+</contributor>
+<contributor>
+<name>LiamClark</name>
+<url>https://github.com/LiamClark</url>
+</contributor>
+</contributors>
+</project>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+<groupId>org.objenesis</groupId>
+<artifactId>objenesis-parent</artifactId>
+<version>2.6</version>
+</parent>
+<artifactId>objenesis</artifactId>
+<name>Objenesis</name>
+<description>A library for instantiating Java objects</description>
+<url>http://objenesis.org</url>
+<build>
+<plugins>
+<plugin>
+<artifactId>maven-jar-plugin</artifactId>
+<configuration>
+<archive>
+<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+</archive>
+</configuration>
+</plugin>
+<plugin>
+<groupId>com.keyboardsamurais.maven</groupId>
+<artifactId>maven-timestamp-plugin</artifactId>
+</plugin>
+<plugin>
+<groupId>com.mycila.maven-license-plugin</groupId>
+<artifactId>maven-license-plugin</artifactId>
+</plugin>
+<plugin>
+<artifactId>maven-remote-resources-plugin</artifactId>
+</plugin>
+<plugin>
+<groupId>org.apache.felix</groupId>
+<artifactId>maven-bundle-plugin</artifactId>
+<extensions>true</extensions>
+<configuration>
+<instructions>
+<Import-Package>            COM.newmonics.PercClassloader;resolution:=optional,            sun.misc;resolution:=optional,            sun.reflect;resolution:=optional            </Import-Package>
+</instructions>
+</configuration>
+<executions>
+<execution>
+<id>bundle-manifest</id>
+<phase>process-classes</phase>
+<goals>
+<goal>manifest</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+<profiles>
+<profile>
+<!-- Activate to create the release bundle -->
+<id>release</id>
+<build>
+<plugins>
+<plugin>
+<artifactId>maven-assembly-plugin</artifactId>
+<configuration>
+<attach>false</attach>
+<descriptors>
+<descriptor>assembly.xml</descriptor>
+</descriptors>
+</configuration>
+<executions>
+<execution>
+<id>make-assembly</id>
+<phase>package</phase>
+<goals>
+<goal>single</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+</profile>
+</profiles>
+</project>
+
+Click entity for XPath. Double-click to collapse/expand. Enter XPath or XML string then click XPath1/Parse for results or to XML Tree-ify, respectively.
+XPath1/Parse
+XSL 1.0
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+<artifactId>byte-buddy-parent</artifactId>
+<groupId>net.bytebuddy</groupId>
+<version>1.9.0</version>
+</parent>
+<artifactId>byte-buddy-agent</artifactId>
+<packaging>jar</packaging>
+<properties>
+<bytebuddy.agent>net.bytebuddy.agent.Installer</bytebuddy.agent>
+<attach.package.sun>com.sun.tools.attach</attach.package.sun>
+<attach.package.ibm>com.ibm.tools.attach</attach.package.ibm>
+<version.unixsocket>2.0.4</version.unixsocket>
+<packages.list>net.bytebuddy.agent</packages.list>
+</properties>
+<name>Byte Buddy Java agent</name>
+<description>The Byte Buddy Java agent allows to access the JVM's HotSwap feature.</description>
+<!--
+      The Unix socket dependency can be excluded safely. Byte Buddy will safely discover the
+      non-availability and not use the corresponding virtual machine implementation. The
+      implementation requires Java 7+ and is deactivated on Java 6 VMs.
+    -->
+<dependencies>
+<dependency>
+<groupId>com.kohlschutter.junixsocket</groupId>
+<artifactId>junixsocket-native-common</artifactId>
+<version>${version.unixsocket}</version>
+<scope>provided</scope>
+</dependency>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>${version.junit}</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.mockito</groupId>
+<artifactId>mockito-core</artifactId>
+<version>${version.mockito}</version>
+<scope>test</scope>
+<exclusions>
+<exclusion>
+<groupId>net.bytebuddy</groupId>
+<artifactId>byte-buddy</artifactId>
+</exclusion>
+<exclusion>
+<groupId>net.bytebuddy</groupId>
+<artifactId>byte-buddy-agent</artifactId>
+</exclusion>
+</exclusions>
+</dependency>
+<!-- Include last version of Byte Buddy manually. -->
+<dependency>
+<groupId>net.bytebuddy</groupId>
+<artifactId>byte-buddy</artifactId>
+<version>1.8.22</version>
+<scope>test</scope>
+</dependency>
+</dependencies>
+<build>
+<plugins>
+<!-- Create manifest file which is required for creating an OSGi bundle. -->
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-jar-plugin</artifactId>
+<version>${version.plugin.jar}</version>
+<configuration>
+<archive>
+<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+</archive>
+</configuration>
+</plugin>
+<!-- Specify OSGi packaging and agent manifest headers. -->
+<plugin>
+<groupId>org.apache.felix</groupId>
+<artifactId>maven-bundle-plugin</artifactId>
+<version>${version.plugin.bundle}</version>
+<executions>
+<execution>
+<phase>process-classes</phase>
+<goals>
+<goal>manifest</goal>
+</goals>
+</execution>
+</executions>
+<configuration>
+<instructions>
+<Premain-Class>${bytebuddy.agent}</Premain-Class>
+<Agent-Class>${bytebuddy.agent}</Agent-Class>
+<Can-Redefine-Classes>true</Can-Redefine-Classes>
+<Can-Retransform-Classes>true</Can-Retransform-Classes>
+<Can-Set-Native-Method-Prefix>true</Can-Set-Native-Method-Prefix>
+<Import-Package>                            ${attach.package.sun};resolution:="optional",                            ${attach.package.ibm};resolution:="optional"                        </Import-Package>
+<Export-Package>${packages.list}</Export-Package>
+</instructions>
+</configuration>
+</plugin>
+<!-- Create a module-info.class file. -->
+<plugin>
+<groupId>codes.rafael.modulemaker</groupId>
+<artifactId>modulemaker-maven-plugin</artifactId>
+<version>${version.plugin.modulemaker}</version>
+<executions>
+<execution>
+<phase>package</phase>
+<goals>
+<goal>inject-module</goal>
+</goals>
+</execution>
+</executions>
+<configuration>
+<name>net.bytebuddy.agent</name>
+<packages>${packages.list}</packages>
+<exports>${packages.list}</exports>
+<requires>java.instrument</requires>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</project>
+
+Click entity for XPath. Double-click to collapse/expand. Enter XPath or XML string then click XPath1/Parse for results or to XML Tree-ify, respectively.
+XPath1/Parse
+XSL 1.0
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<parent>
+<artifactId>byte-buddy-parent</artifactId>
+<groupId>net.bytebuddy</groupId>
+<version>1.9.0</version>
+</parent>
+<modelVersion>4.0.0</modelVersion>
+<artifactId>byte-buddy</artifactId>
+<name>Byte Buddy (without dependencies)</name>
+<description>Byte Buddy is a Java library for creating Java classes at run time.        This artifact is a build of Byte Buddy with all ASM dependencies repackaged into its own name space.</description>
+<build>
+<plugins>
+<plugin>
+<artifactId>maven-shade-plugin</artifactId>
+<version>${version.plugin.shade}</version>
+<executions>
+<execution>
+<phase>package</phase>
+<goals>
+<goal>shade</goal>
+</goals>
+<configuration>
+<shadedArtifactAttached>false</shadedArtifactAttached>
+<createDependencyReducedPom>true</createDependencyReducedPom>
+<createSourcesJar>true</createSourcesJar>
+<shadeSourcesContent>true</shadeSourcesContent>
+<relocations>
+<relocation>
+<pattern>${shade.source}</pattern>
+<shadedPattern>${shade.target}</shadedPattern>
+</relocation>
+</relocations>
+<filters>
+<filter>
+<artifact>org.ow2.asm:asm-commons</artifact>
+<includes>
+<include>org/objectweb/asm/commons/Remapper.class</include>
+<include>org/objectweb/asm/commons/SimpleRemapper.class</include>
+<include>org/objectweb/asm/commons/ClassRemapper.class</include>
+<include>org/objectweb/asm/commons/AnnotationRemapper.class</include>
+<include>org/objectweb/asm/commons/FieldRemapper.class</include>
+<include>org/objectweb/asm/commons/MethodRemapper.class</include>
+<include>org/objectweb/asm/commons/ModuleRemapper.class</include>
+<include>org/objectweb/asm/commons/SignatureRemapper.class</include>
+</includes>
+</filter>
+</filters>
+<transformers>
+<transformer>
+<mainClass>net.bytebuddy.build.Plugin$Engine$Default</mainClass>
+</transformer>
+</transformers>
+</configuration>
+</execution>
+</executions>
+<dependencies>
+<dependency>
+<groupId>org.ow2.asm</groupId>
+<artifactId>asm</artifactId>
+<version>${version.asm}</version>
+</dependency>
+<dependency>
+<groupId>org.ow2.asm</groupId>
+<artifactId>asm-commons</artifactId>
+<version>${version.asm}</version>
+</dependency>
+</dependencies>
+</plugin>
+<plugin>
+<groupId>org.pitest</groupId>
+<artifactId>pitest-maven</artifactId>
+<version>${version.plugin.pitest}</version>
+<configuration>
+<skip>true</skip>
+</configuration>
+</plugin>
+<plugin>
+<groupId>com.github.spotbugs</groupId>
+<artifactId>spotbugs-maven-plugin</artifactId>
+<version>${version.plugin.spotbugs}</version>
+<configuration>
+<skip>true</skip>
+</configuration>
+</plugin>
+<plugin>
+<artifactId>maven-jar-plugin</artifactId>
+<version>${version.plugin.jar}</version>
+<configuration>
+<archive>
+<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+</archive>
+</configuration>
+</plugin>
+<plugin>
+<groupId>org.apache.felix</groupId>
+<artifactId>maven-bundle-plugin</artifactId>
+<version>${version.plugin.bundle}</version>
+<executions>
+<execution>
+<phase>process-classes</phase>
+<goals>
+<goal>manifest</goal>
+</goals>
+</execution>
+</executions>
+<configuration>
+<instructions>
+<Export-Package>${packages.list}</Export-Package>
+</instructions>
+</configuration>
+</plugin>
+<plugin>
+<groupId>codes.rafael.modulemaker</groupId>
+<artifactId>modulemaker-maven-plugin</artifactId>
+<version>${version.plugin.modulemaker}</version>
+<executions>
+<execution>
+<phase>package</phase>
+<goals>
+<goal>inject-module</goal>
+</goals>
+</execution>
+</executions>
+<configuration>
+<name>net.bytebuddy</name>
+<packages>${packages.list}</packages>
+<exports>${packages.list}</exports>
+<static-requires>java.instrument,                        jdk.unsupported,                        net.bytebuddy.agent</static-requires>
+</configuration>
+</plugin>
+</plugins>
+</build>
+<profiles>
+<profile>
+<id>extras</id>
+<build>
+<plugins>
+<plugin>
+<artifactId>maven-javadoc-plugin</artifactId>
+<version>2.10.4</version>
+<executions>
+<execution>
+<id>attach-javadoc</id>
+<goals>
+<goal>jar</goal>
+</goals>
+<configuration>
+<includeDependencySources>true</includeDependencySources>
+<dependencySourceIncludes>
+<dependencySourceInclude>net.bytebuddy:byte-buddy-dep</dependencySourceInclude>
+</dependencySourceIncludes>
+<detectJavaApiLink>true</detectJavaApiLink>
+<links>
+<link>http://asm.ow2.io/javadoc</link>
+</links>
+</configuration>
+</execution>
+<execution>
+<id>aggregate-javadoc</id>
+<phase>package</phase>
+<goals>
+<goal>aggregate</goal>
+</goals>
+<configuration>
+<doctitle>Byte Buddy (full API), version 1.9.0</doctitle>
+<failOnError>false</failOnError>
+<includeDependencySources>true</includeDependencySources>
+<dependencySourceIncludes>
+<dependencySourceInclude>net.bytebuddy:byte-buddy-dep</dependencySourceInclude>
+</dependencySourceIncludes>
+<detectJavaApiLink>true</detectJavaApiLink>
+<links>
+<link>http://asm.ow2.io/javadoc</link>
+</links>
+</configuration>
+</execution>
+</executions>
+<configuration>
+<includeDependencySources>true</includeDependencySources>
+<dependencySourceIncludes>
+<dependencySourceInclude>net.bytebuddy:byte-buddy-dep</dependencySourceInclude>
+</dependencySourceIncludes>
+<detectJavaApiLink>true</detectJavaApiLink>
+<links>
+<link>http://asm.ow2.io/javadoc</link>
+</links>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</profile>
+</profiles>
+<dependencies>
+<dependency>
+<groupId>com.google.code.findbugs</groupId>
+<artifactId>findbugs-annotations</artifactId>
+<version>3.0.1</version>
+<scope>provided</scope>
+</dependency>
+</dependencies>
+<properties>
+<shade.source>org.objectweb.asm</shade.source>
+<packages.list>net.bytebuddy,            net.bytebuddy.agent.builder,            net.bytebuddy.asm,            net.bytebuddy.build,            net.bytebuddy.description,            net.bytebuddy.description.annotation,            net.bytebuddy.description.enumeration,            net.bytebuddy.description.field,            net.bytebuddy.description.method,            net.bytebuddy.description.modifier,            net.bytebuddy.description.type,            net.bytebuddy.dynamic,            net.bytebuddy.dynamic.loading,            net.bytebuddy.dynamic.scaffold,            net.bytebuddy.dynamic.scaffold.inline,            net.bytebuddy.dynamic.scaffold.subclass,            net.bytebuddy.implementation,            net.bytebuddy.implementation.attribute,            net.bytebuddy.implementation.auxiliary,            net.bytebuddy.implementation.bind,            net.bytebuddy.implementation.bind.annotation,            net.bytebuddy.implementation.bytecode,            net.bytebuddy.implementation.bytecode.assign,            net.bytebuddy.implementation.bytecode.assign.primitive,            net.bytebuddy.implementation.bytecode.assign.reference,            net.bytebuddy.implementation.bytecode.collection,            net.bytebuddy.implementation.bytecode.constant,            net.bytebuddy.implementation.bytecode.member,            net.bytebuddy.matcher,            net.bytebuddy.pool,            net.bytebuddy.utility,            net.bytebuddy.utility.privilege,            net.bytebuddy.utility.visitor,            ${shade.target},            ${shade.target}.commons</packages.list>
+<shade.target>net.bytebuddy.jar.asm</shade.target>
+</properties>
+</project>
