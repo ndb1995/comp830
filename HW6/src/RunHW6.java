@@ -20,22 +20,18 @@ public class RunHW6 {
 				AddCommand addcmd = new AddCommand(splited[1]);
 				gamer.SetCommand(addcmd);
 				gamer.execute();
-				System.out.println(ListOfWords.getInstance().toString());
 				break;
 			case "delete":
 				// pass in the word to be deleted
 				DeleteCommand delcmd = new DeleteCommand(splited[1]);
 				gamer.SetCommand(delcmd);
 				gamer.execute();
-				System.out.println(ListOfWords.getInstance().toString());
 				break;
 			case "undo":
 				gamer.undo();
-				System.out.println(ListOfWords.getInstance().toString());
 				break;
 			case "redo":
 				gamer.redo();
-				System.out.println(ListOfWords.getInstance().toString());
 				break;
 			case "quit":
 				run = false;
@@ -43,6 +39,9 @@ public class RunHW6 {
 			default: 
 				System.out.println("Not a command"); 
 			}
+			// prevents a printout when quit is typed in
+			if(run)
+				System.out.println(ListOfWords.getInstance().toString());
 
 		}
 	}
