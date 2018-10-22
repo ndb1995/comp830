@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class RunHW6 {
 
 	public static void main(String[] args) {
-		GameCommandInvoker gamer = new GameCommandInvoker();
+		GameCommandInvoker game = new GameCommandInvoker();
 		Scanner scan = new Scanner(System.in);
 		// this variable will be changed to false when we type in "quit" to end the while loop
 		boolean run = true;
@@ -18,20 +18,20 @@ public class RunHW6 {
 			case "add":
 				// pass in the word to be added
 				AddCommand addcmd = new AddCommand(splited[1]);
-				gamer.SetCommand(addcmd);
-				gamer.execute();
+				game.SetCommand(addcmd);
+				game.execute();
 				break;
 			case "delete":
 				// pass in the word to be deleted
 				DeleteCommand delcmd = new DeleteCommand(splited[1]);
-				gamer.SetCommand(delcmd);
-				gamer.execute();
+				game.SetCommand(delcmd);
+				game.execute();
 				break;
 			case "undo":
-				gamer.undo();
+				game.undo();
 				break;
 			case "redo":
-				gamer.redo();
+				game.redo();
 				break;
 			case "quit":
 				run = false;
