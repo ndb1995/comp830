@@ -10,6 +10,7 @@ public class Tester {
 		AddCommand cmd = new AddCommand("test");
 		game.SetCommand(cmd);
 		game.execute();
+		
 		assertEquals(ListOfWords.getInstance().toString(),"[test]");
 	}
 	
@@ -19,6 +20,7 @@ public class Tester {
 		DeleteCommand cmd = new DeleteCommand("test");
 		game.SetCommand(cmd);
 		game.execute();
+		
 		assertEquals(ListOfWords.getInstance().toString(),"[]");
 	}
 }
