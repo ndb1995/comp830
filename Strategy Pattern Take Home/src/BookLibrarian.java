@@ -47,10 +47,10 @@ public class BookLibrarian {
 		BookInformation b13 = new BookInformation("Dante Alighieri","The Divine Comedy","1320",
 				"The narrative describes Dante's travels through Hell, Purgatory, and Paradise or Heaven,[4] while allegorically the poem represents the soul's journey towards God.");
 		bookInformation.add(b13);
-		BookInformation b14 = new BookInformation("Seneca","Moral Letters to Lucilius","65",
+		BookInformation b14 = new BookInformation("Seneca","Moral Letters to Lucilius","0065",
 				" is a collection of 124 letters which were written by Seneca the Younger at the end of his life, during his retirement, and written after he had worked for the Emperor Nero for more than ten years.");
 		bookInformation.add(b14);
-		BookInformation b15 = new BookInformation("St. Augustine","The Confessions","400",
+		BookInformation b15 = new BookInformation("St. Augustine","The Confessions","0400",
 				"The work outlines Saint Augustine's sinful youth and his conversion to Christianity.");
 		bookInformation.add(b15);
 		BookInformation b16 = new BookInformation("George Orwell","1984","1949",
@@ -59,7 +59,7 @@ public class BookLibrarian {
 		BookInformation b17 = new BookInformation("Alexis de Tocqueville","Democracy in America","1840",
 				"In the book, Tocqueville examines the democratic revolution that he believed had been occurring over the previous several hundred years.");
 		bookInformation.add(b17);
-		BookInformation b18 = new BookInformation("Tacitus","Annals","68",
+		BookInformation b18 = new BookInformation("Tacitus","Annals","0068",
 				"is a history of the Roman Empire from the reign of Tiberius to that of Nero, the years AD 14–68.");
 		bookInformation.add(b18);
 		BookInformation b19 = new BookInformation("Victor Hugo","Les Misérables","1862",
