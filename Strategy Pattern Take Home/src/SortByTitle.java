@@ -4,8 +4,6 @@ import java.util.Collections;
 public class SortByTitle implements BookStrategy {
 
 	public void sort(ArrayList<BookInformation> books) {
-		ArrayList<BookInformation> NewOrderList = new ArrayList<BookInformation>();
-
 		ArrayList<String> sortedTItle = new ArrayList<String>();
 		ArrayList<Integer> sortedIndex = new ArrayList<Integer>();
 		int positionInList;

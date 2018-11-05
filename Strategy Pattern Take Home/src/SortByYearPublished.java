@@ -4,8 +4,6 @@ import java.util.Collections;
 public class SortByYearPublished implements BookStrategy {
 
 	public void sort(ArrayList<BookInformation> books) {
-		ArrayList<BookInformation> NewOrderList = new ArrayList<BookInformation>();
-
 		ArrayList<String> sortedYear = new ArrayList<String>();
 		ArrayList<Integer> sortedIndex = new ArrayList<Integer>();
 		int positionInList;

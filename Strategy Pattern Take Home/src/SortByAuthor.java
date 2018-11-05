@@ -5,8 +5,6 @@ import java.util.Collections;
 public class SortByAuthor implements BookStrategy {
 
 	public void sort(ArrayList<BookInformation> books) {
-		ArrayList<BookInformation> NewOrderList = new ArrayList<BookInformation>();
-
 		ArrayList<String> sortedAuthor = new ArrayList<String>();
 		ArrayList<Integer> sortedIndex = new ArrayList<Integer>();
 		int positionInList;
@@ -26,6 +24,7 @@ public class SortByAuthor implements BookStrategy {
 		for (String s : sortedAuthor) {
 			positionInList = 0;
 
+			// we will check to see if the author matches, if he does we record the index position so we can print in the correct order later on
 			for (BookInformation b : books) {
 				if (b.getAuthor() == s) {
 					sortedIndex.add(positionInList);

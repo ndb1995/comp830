@@ -6,9 +6,6 @@ public class RunStrategy {
 	
 	public static void main(String[] args) {
 		BookLibrarian bl = new BookLibrarian();
-		//SortByYearPublished y = new SortByYearPublished();
-		//SortByAuthor a = new SortByAuthor();
-		//SortByTitle t = new SortByTitle();
 		Scanner input = new Scanner(System.in);
 		boolean run = true;
 		// we will run the command asking what way the user wants to sort the books and then set the strategy
