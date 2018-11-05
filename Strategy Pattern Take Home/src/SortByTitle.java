@@ -1,17 +1,40 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class SortByTitle implements BookStrategy{
+public class SortByTitle implements BookStrategy {
 
-	public void sort() {
-		BookLibrarian bl = new BookLibrarian();
-		ArrayList<BookInformation> Books = bl.getBookInformation();
-		Collections.sort(Books);
+	public void sort(ArrayList<BookInformation> books) {
+		ArrayList<BookInformation> NewOrderList = new ArrayList<BookInformation>();
 
-		for (int i = 0; i < Books.size(); i++) {
-			System.out.println(Books.get(i));
+		ArrayList<String> sortedTItle = new ArrayList<String>();
+		ArrayList<Integer> sortedIndex = new ArrayList<Integer>();
+		int positionInList;
+
+		for (BookInformation b : books) {
+			if (!sortedTItle.contains(b.getTitle())) {
+				sortedTItle.add(b.getTitle());
+			}
+
+		}
+
+		Collections.sort(sortedTItle);
+
+		for (String s : sortedTItle) {
+			positionInList = 0;
+
+			for (BookInformation b : books) {
+				if (b.getTitle() == s) {
+					sortedIndex.add(positionInList);
+
+				}
+				positionInList++;
+			}
+
+		}
+
+		for (Integer i : sortedIndex) {
+			System.out.println(books.get(i).getAll());
 		}
 	}
-
 
 }

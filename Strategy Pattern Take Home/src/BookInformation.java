@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class BookInformation {
 	String Author;
 	String Title;
@@ -46,24 +44,9 @@ public class BookInformation {
 		this.Summary = Summary;
 	}
 
-    public int compareTo(BookInformation book) {
-        String compareAuthor=((BookInformation)book).getAuthor();
-        /* For Ascending order*/
-        return compareAuthor.compareTo( this.Author );
-
-    }
-    
-    public int compareTo(BookInformation book) {
-        String compareTitle=((BookInformation)book).getTitle();
-        /* For Ascending order*/
-        return compareTitle.compareTo( this.Title );
-
-    }
-    
-    public int compareTo(BookInformation book) {
-        String comparePublished=((BookInformation)book).getYearPublished();
-        /* For Ascending order*/
-        return comparePublished.compareTo( this.YearPublished );
-
-    }
+	// this method will be used to print the current values of the instance of bookinformation
+	public String getAll() {
+		return ("Author: " + Author + " Title: " + Title + " Year Published: " + YearPublished);
+		
+	}
 }
