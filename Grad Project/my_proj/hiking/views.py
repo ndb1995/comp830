@@ -3,21 +3,25 @@ from django.forms import ModelForm
 from .models import Hiking
 from django.db.models import Sum, Count
 
+# form for use with creating and updating
 class HikingForm(ModelForm):
     class Meta:
         model = Hiking
         fields = ['name', 'distance', 'time', 'date', 'group_size', 'state']
 
+# view every hike
 def hike_list(request, template_name='hiking/templates/hiking_list.html'):
     hike = Hiking.objects.all()
     data = {}
     data['object_list'] = hike
     return render(request, template_name, data)
 
+# view a specific hike
 def hike_view(request, pk, template_name='hiking/templates/hiking_detail.html'):
     hike = get_object_or_404(Hiking, pk=pk)    
     return render(request, template_name, {'object':hike})
 
+# create an exisiting hike
 def hike_create(request, template_name='hiking/templates/hiking_form.html'):
     form = HikingForm(request.POST or None)
     if form.is_valid():
@@ -25,6 +29,7 @@ def hike_create(request, template_name='hiking/templates/hiking_form.html'):
         return redirect('hike_list')
     return render(request, template_name, {'form':form})
 
+# update an existing hike
 def hike_update(request, pk, template_name='hiking/templates/hiking_form.html'):
     hike = get_object_or_404(Hiking, pk=pk)
     form = HikingForm(request.POST or None, instance=hike)
@@ -33,6 +38,7 @@ def hike_update(request, pk, template_name='hiking/templates/hiking_form.html'):
         return redirect('hike_list')
     return render(request, template_name, {'form':form})
 
+# delete any previously entered hike
 def hike_delete(request, pk, template_name='hiking/templates/hiking_confirm_delete.html'):
     hike = get_object_or_404(Hiking, pk=pk)    
     if request.method=='POST':
@@ -40,6 +46,7 @@ def hike_delete(request, pk, template_name='hiking/templates/hiking_confirm_dele
         return redirect('hike_list')
     return render(request, template_name, {'object':hike})
 
+# get a sum of some hiking stats
 def hike_stats(request, template_name='hiking/templates/hike_stats.html'):
     time = Hiking.objects.aggregate(Sum('time'))
     name = Hiking.objects.aggregate(Count('name'))

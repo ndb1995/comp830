@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>List of hikes:</h2>
+<h1 class="mt-2">List of Hikes:</h1>
     <ul class="list-group"  >
         {% for hike in object_list %}
         <li class="list-group-item">{{ hike.name }}  ({{ hike.date }})

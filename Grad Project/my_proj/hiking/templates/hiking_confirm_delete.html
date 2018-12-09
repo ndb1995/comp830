@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Hiking Confirm Delete</h2>
-    <form method="post">{% csrf_token %}
+    <h1 class="mt-2">Confirm Delete:</h1>
+    <form method="post" class="form-group">{% csrf_token %}
         Are you sure you want to delete "{{ object }}" ?<br/>
-        <input type="submit" value="Delete" />
+        <input class="btn btn-danger" type="submit" value="Delete" />
     </form>
 {% endblock %}
