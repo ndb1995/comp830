@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>List of mountains:</h2>
-    <ul>
+    <h2>List of hikes:</h2>
+    <ul class="list-group"  >
         {% for hike in object_list %}
-        <li>{{ hike.name }}  ({{ hike.distance }} Distance)
+        <li class="list-group-item">{{ hike.name }}  ({{ hike.date }})
             <a href="{% url 'hike_view' hike.id %}">view details</a>
             <a href="{% url 'hike_edit' hike.id %}">edit</a>
             <a href="{% url 'hike_delete' hike.id %}">delete</a>
@@ -12,5 +12,5 @@
         {% endfor %}
     </ul>
 
-    <a href="{% url 'hike_new' %}">New</a>
+    <a href="{% url 'hike_new' %}" class="btn btn-default">New</a>
 {% endblock %}

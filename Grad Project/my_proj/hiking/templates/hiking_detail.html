@@ -5,20 +5,20 @@
 
 <div class="modal-body row">
     <div class="col-md-6">
-        <ul>
-            <li>Mountain: {{ object.name }}</li>
-            <li>Distance Traveled: {{ object.distance }}</li>
-            <li>Total Time: {{ object.time }} </li>
-            <li>Date of Hike: {{ object.date }}</li>
-            <li>Group Size: {{ object.group_size}}</li>
-            <li>State: {{ object.state }}</li>
+        <ul class="list-group">
+            <li class="list-group-item">Mountain: {{ object.name }}</li>
+            <li class="list-group-item">Distance Traveled: {{ object.distance }}</li>
+            <li class="list-group-item">Total Time: {{ object.time }} </li>
+            <li class="list-group-item">Date of Hike: {{ object.date }}</li>
+            <li class="list-group-item">Group Size: {{ object.group_size}}</li>
+            <li class="list-group-item">State: {{ object.state }}</li>
         </ul>
-        <img id="mountainIMG" width="60%"></img>
+        <img id="mountainIMG" class="img-fluid" alt="Responsive image"></img>
     </div>
     <div class="col-md-6">
         <iframe width="100%" height="80%" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q={{object.name}}&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Draw
-                    map route</a></iframe><br />
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Draw
+                map route</a></iframe><br />
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

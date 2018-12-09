@@ -2,11 +2,11 @@
 
 {% block content %}
 <h2>Stats</h2>
-
-<li>Number of Mountains Hiked: {{ name.name__count }}</li>
-<li>Total Time Spent Hiking: {{ time.time__sum }}</li>
-<li>Total Distance Traveled Hiking: {{ distance.distance__sum }}</li>
-<li>Total Elevation Gain: {{ elevation.elevation__sum }}</li>
-
+<ul class="list-group">
+    <li class="list-group-item">Number of Mountains Hiked: {{ name.name__count }}</li>
+    <li class="list-group-item">Total Time Spent Hiking: {{ time.time__sum }}</li>
+    <li class="list-group-item">Total Distance Traveled Hiking: {{ distance.distance__sum }}</li>
+    <li class="list-group-item">Total Elevation Gain: {{ elevation.elevation__sum }}</li>
+</ul>
 
 {% endblock %}
