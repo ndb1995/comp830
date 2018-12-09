@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Stats</h2>
+
+<li>Number of Mountains Hiked: {{ name.name__count }}</li>
+<li>Total Time Spent Hiking: {{ time.time__sum }}</li>
+<li>Total Distance Traveled Hiking: {{ distance.distance__sum }}</li>
+<li>Total Elevation Gain: {{ elevation.elevation__sum }}</li>
+
+
+{% endblock %}

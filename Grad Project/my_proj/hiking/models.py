@@ -5,6 +5,7 @@ import datetime
 class Hiking (models.Model):
     name = models.CharField(max_length = 100)
     distance = models.FloatField()
+    elevation = models.IntegerField()
     time = models.FloatField()
     date = models.DateField(default=datetime.date.today)
     group_size = models.IntegerField()

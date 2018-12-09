@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import ModelForm
 from .models import Hiking
+from django.db.models import Sum, Count
 
 class HikingForm(ModelForm):
     class Meta:
@@ -38,3 +39,15 @@ def hike_delete(request, pk, template_name='hiking/templates/hiking_confirm_dele
         hike.delete()
         return redirect('hike_list')
     return render(request, template_name, {'object':hike})
+
+def hike_stats(request, template_name='hiking/templates/hike_stats.html'):
+    time = Hiking.objects.aggregate(Sum('time'))
+    name = Hiking.objects.aggregate(Count('name'))
+    distance = Hiking.objects.aggregate(Sum('distance'))
+    elevation = Hiking.objects.aggregate(Sum('elevation'))
+    data = {}
+    data['time'] = time
+    data['name'] = name
+    data['distance'] = distance
+    data['elevation'] = elevation
+    return render(request, template_name, data)
