@@ -3,48 +3,26 @@
 {% block content %}
 <h2>Hiking Detail</h2>
 
-
-
-<div>
-    <div class="row">
-        <div class="col-md-6">
-            <ul>
-                <li>Mountain: {{ object.name }}</li>
-                <li>Distance Traveled: {{ object.distance }}</li>
-                <li>Total Time: {{ object.time }} </li>
-                <li>Date of Hike: {{ object.date }}</li>
-                <li>Group Size: {{ object.group_size}}</li>
-                <li>State: {{ object.state }}</li>
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q={{object.name}}&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Draw
-                        map route</a></iframe></div><br />
-        </div>
+<div class="modal-body row">
+    <div class="col-md-6">
+        <ul>
+            <li>Mountain: {{ object.name }}</li>
+            <li>Distance Traveled: {{ object.distance }}</li>
+            <li>Total Time: {{ object.time }} </li>
+            <li>Date of Hike: {{ object.date }}</li>
+            <li>Group Size: {{ object.group_size}}</li>
+            <li>State: {{ object.state }}</li>
+        </ul>
+        <img id="mountainIMG" width="60%"></img>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-                <div id="carousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators"></ol>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner"></div>
-                        <!-- Controls -->
-                            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                            </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                    </div>
-        </div>
+    <div class="col-md-6">
+        <iframe width="100%" height="80%" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q={{object.name}}&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Draw
+                    map route</a></iframe><br />
     </div>
 </div>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 <script type="text/javascript">
 
     var keyword = "{{object.name}}";
@@ -61,17 +39,11 @@
                 var rnd = Math.floor(Math.random() * data.items.length);
 
                 var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
-                for(let j = 0; j < 5; j++) {
-                    $('<div class="carousel-item"><img src=' + image_src + ' width="50%">   </div>').appendTo('.carousel-inner');
-                    $('<li data-target="#carousel" data-slide-to="'+j+'"></li>').appendTo('.carousel-indicators')
-                    
-                    }
-                    $('.carousel-item').first().addClass('active');
-                    $('.carousel-indicators > li').first().addClass('active');
-                    $('#carousel').carousel();
-                });
+                $("#mountainIMG").attr("src", image_src);
 
             });
-    
+
+    });
+
 </script>
 {% endblock %}
