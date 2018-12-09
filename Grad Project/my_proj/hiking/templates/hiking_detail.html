@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>Hiking Detail</p>
+    <h2>Hiking Detail</h2>
+    <h2><a href="{% url 'hike_list' %}">Hiking List</a></h2>
+
+    <ul>
+        <li>Mountain: {{ object.name }}</li>
+        <li>Distance Traveled: {{ object.distance }}</li>
+        <li>Total Time: {{ object.time }} /li>
+        <li>Date of Hike: {{ object.date }}</li>
+        <li>Group Size: {{ object.group_size}}</li>
+        <li>State: {{ object.state }}</li>
+    </ul>
+
+    <a href="{% url 'hike_new' %}">New</a>
 {% endblock %}
