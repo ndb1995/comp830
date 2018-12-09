@@ -2,9 +2,6 @@
 
 {% block content %}
     <h2>Hiking Form</h2>
-
-    <h3><a href="{% url 'hike_list' %}">Hiking List</a>: Edit</h3>
-
     <form method="post">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit" />

@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2><a href="{% url 'hike_list' %}">Hiking List</a></h2>
-
+    <h2>List of mountains:</h2>
     <ul>
         {% for hike in object_list %}
         <li>{{ hike.name }}  ({{ hike.distance }} Distance)
