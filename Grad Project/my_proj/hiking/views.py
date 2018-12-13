@@ -7,7 +7,7 @@ from django.db.models import Sum, Count
 class HikingForm(ModelForm):
     class Meta:
         model = Hiking
-        fields = ['name', 'distance', 'time', 'date', 'group_size', 'state']
+        fields = ['name', 'distance', 'elevation', 'time', 'date', 'group_size', 'state']
 
 # view every hike
 def hike_list(request, template_name='hiking/templates/hiking_list.html'):
