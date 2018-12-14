@@ -4,9 +4,9 @@
 <h1 class="mt-2">Stats</h1>
 <ul class="list-group">
     <li class="list-group-item">Number of Mountains Hiked: {{ name.name__count }}</li>
-    <li class="list-group-item">Total Time Spent Hiking: {{ time.time__sum }}</li>
-    <li class="list-group-item">Total Distance Traveled Hiking: {{ distance.distance__sum }}</li>
-    <li class="list-group-item">Total Elevation Gain: {{ elevation.elevation__sum }}</li>
+    <li class="list-group-item">Total Time Spent Hiking: {{ time.time__sum }} hours</li>
+    <li class="list-group-item">Total Distance Traveled Hiking: {{ distance.distance__sum }} miles</li>
+    <li class="list-group-item">Total Elevation Gain: {{ elevation.elevation__sum }} feet</li>
 </ul>
 <div id="map"></div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArv155Hucp5AVDGXtyyW8tVeL009wvkNU&callback=initMap"
