@@ -8,10 +8,12 @@
         <ul class="list-group">
             <li class="list-group-item">Mountain: {{ object.name }}</li>
             <li class="list-group-item">Distance Traveled: {{ object.distance }}</li>
+            <li class="list-group-item">Distance Traveled: {{ object.elevation }}</li>
             <li class="list-group-item">Total Time: {{ object.time }} </li>
             <li class="list-group-item">Date of Hike: {{ object.date }}</li>
             <li class="list-group-item">Group Size: {{ object.group_size}}</li>
             <li class="list-group-item">State: {{ object.state }}</li>
+            <li class="list-group-item">Wiki Summary:  <a href=" {{ wiki_url }}"> {{object.name}}</a> <br> {{ wiki }}</li>
         </ul>
         <img id="mountainIMG" class="img-fluid" alt="Responsive image"></img>
     </div>
@@ -21,7 +23,8 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-<script type="text/javascript">
+
+<script async type="text/javascript">
 
     var keyword = "{{object.name}}";
 
@@ -42,6 +45,7 @@
             });
 
     });
+
 </script>
 
 

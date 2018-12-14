@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import ModelForm
 from .models import Hiking
 from django.db.models import Sum, Count
+import wikipedia as wiki
+
 
 # form for use with creating and updating
 class HikingForm(ModelForm):
@@ -18,8 +20,11 @@ def hike_list(request, template_name='hiking/templates/hiking_list.html'):
 
 # view a specific hike
 def hike_view(request, pk, template_name='hiking/templates/hiking_detail.html'):
-    hike = get_object_or_404(Hiking, pk=pk)    
-    return render(request, template_name, {'object':hike})
+    hike = get_object_or_404(Hiking, pk=pk)   
+    w = wiki.summary(hike.name, sentences = 4) 
+    wurl = wiki.page(hike.name)
+    wurl = wurl.url
+    return render(request, template_name, {'object':hike, 'wiki': w, 'wiki_url': wurl})
 
 # create an exisiting hike
 def hike_create(request, template_name='hiking/templates/hiking_form.html'):
